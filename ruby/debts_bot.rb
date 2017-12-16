@@ -27,7 +27,7 @@ def how_much
   return unless all_messages
   all_messages.split("\n").each_with_object(Hash.new(0)) do |msg, obj|
     name, text = msg.split(':')
-    amount = text.match(/\d+/).to_a.first.to_i
+    amount = text.match(/[\d\.]+/).to_a.first.to_f
 
     debtor = case name
              when /alexander/i then 'саша'
