@@ -2,7 +2,7 @@ require 'nokogiri'
 require 'date'
 
 def fetch_html_for(day)
-  file = "examples/#{day.month}_#{day.day}.html"
+  file = "samples/hockey_players_birthdays/#{day.month}_#{day.day}.html"
 
   unless File.exist?(file)
     url = "https://www.hockey-reference.com/friv/birthdays.cgi?month=#{day.month}&day=#{day.day}"
