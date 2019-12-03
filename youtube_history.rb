@@ -1,6 +1,8 @@
 require 'nokogiri'
 
-doc = Nokogiri::HTML(File.read('Takeout/YouTube/история/история-просмотров.html'));
-videos = doc.css('.content-cell:contains("Просмотрено видео")')
+HISTORY_HTML_FILE_NAME = ARGV[0]
 
-p videos.group_by { |v| v.at_css('a').text }.transform_values(&:count).sort_by(&:last).reverse
+doc = Nokogiri::HTML(File.read(HISTORY_HTML_FILE_NAME));
+videos = doc.css('.content-cell:contains("Watched")')
+
+vs = videos.group_by { |v| v.at_css('a')&.text }.sort_by { |v| v.last.count }.reverse
