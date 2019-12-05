@@ -1,3 +1,4 @@
+# file with sms downloaded by Android bridge
 sms_log_path = ARGV.first
 
 require 'date'

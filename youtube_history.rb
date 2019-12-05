@@ -1,5 +1,6 @@
 require 'nokogiri'
 
+# can be fetched by google user data request
 HISTORY_HTML_FILE_NAME = ARGV[0]
 
 doc = Nokogiri::HTML(File.read(HISTORY_HTML_FILE_NAME));

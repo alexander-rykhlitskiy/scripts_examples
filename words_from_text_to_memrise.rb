@@ -1,5 +1,6 @@
 #!/usr/bin/env ruby
 
+# wordsfromtext "download all data in txt format"
 filename = ARGV[0]
 
 new_text = File.read(filename).split("\n").map do |line|
